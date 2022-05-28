@@ -1,0 +1,14 @@
+Oblicz środek odcinka AB. A wynosi (-2,3), a B=(4,-3)
+A.S=(-3,0)
+B.S=(2,4)
+C.S=(1,0)
+D.S=(7,-2)
+ODP
+C
+Oblicz przeciwprostokątna trójkąta, jeśli przyprostokątne mają długość 3 i 4.
+A.5
+B.7
+C.4
+D.9
+ODP
+A
