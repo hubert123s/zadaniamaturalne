@@ -25,7 +25,7 @@ public class BazaPytan {
                  //przyznawanie punktow
                  punkty.setPunkt(1);
              }
-
+             punkty.setIloscpytan(1);
          }
          else{
              System.out.println(name);
@@ -35,9 +35,8 @@ public class BazaPytan {
          if(!scan.hasNextLine())
          {
              System.out.println("To koniec pytań");
-             //zliczanie ilosci pkt
          }
      }
-     System.out.println("Ilosc zdobytych punktów: "+ punkty.getPunkt());
+     System.out.println("Ilosc zdobytych punktów: "+ punkty.getPunkt()+"/"+punkty.getIloscpytan());
    }
 }

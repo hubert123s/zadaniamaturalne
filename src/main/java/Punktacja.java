@@ -23,7 +23,7 @@ public class Punktacja {
         }
 
         public void setIloscpytan(int iloscpytan) {
-                this.iloscpytan = iloscpytan;
+                this.iloscpytan += iloscpytan;
         }
 
 }
