@@ -15,7 +15,7 @@ public class Menu {
 
         BazaPytan pytanie= new BazaPytan() ;
         NowePytanie nowePytanie = new NowePytanie();
-        nowePytanie.dodajPytanie(fileName);
+       // nowePytanie.dodajPytanie(fileName);
 
         pytanie.zczytywaniezPliku(fileName);
 
