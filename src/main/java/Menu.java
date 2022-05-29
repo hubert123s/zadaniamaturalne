@@ -9,10 +9,16 @@ import java.util.Scanner;
 
 public class Menu {
 
+    private final static String fileName = "zadaniamaturalne.txt";
+
     public static void main(String[] args) throws IOException {
 
         BazaPytan pytanie= new BazaPytan() ;
-        pytanie.zczytywaniezPliku();
+        NowePytanie nowePytanie = new NowePytanie();
+        nowePytanie.dodajPytanie(fileName);
+
+        pytanie.zczytywaniezPliku(fileName);
+
 
 
     }

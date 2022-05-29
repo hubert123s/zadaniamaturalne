@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class BazaPytan {
 
 
- static public void zczytywaniezPliku() throws IOException {
+
+ public static void zczytywaniezPliku(String fileName) throws IOException {
      Scanner scanner = new Scanner(System.in);
-     String fileName = "zadaniamaturalne.txt";
      File filescan = new File(fileName);
      Scanner scan = new Scanner(filescan);
      Punktacja punkty= new Punktacja(0,0);
