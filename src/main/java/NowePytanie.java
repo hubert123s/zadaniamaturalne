@@ -38,12 +38,6 @@ public class NowePytanie {
         }
 
     }
-public static void odpowiedzi ()
-{
-    String tablicaOdpowiedzi []={"A.","B.","C.","D." };
 
-
-
-}
 
 }
