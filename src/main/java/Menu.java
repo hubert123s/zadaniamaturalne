@@ -15,9 +15,16 @@ public class Menu {
 
         BazaPytan pytanie= new BazaPytan() ;
         NowePytanie nowePytanie = new NowePytanie();
-       // nowePytanie.dodajPytanie(fileName);
+       // System.out.println("Dodaj pytanie :"+nowePytanie.trescCalegoZadania());
+        nowePytanie.dodajDoPliku(fileName,nowePytanie.trescCalegoZadania());
 
-        pytanie.zczytywaniezPliku(fileName);
+
+
+       // nowePytanie.dodajPytanie(fileName);
+        //String [] name = nowePytanie.trescCalegoZadania();
+        pytanie.zczytywaniezPliku(fileName,false);
+        //czytanie pytan na ktore była zła odpowiedz
+        pytanie.zczytywaniezPliku(fileName,true);
 
 
 
