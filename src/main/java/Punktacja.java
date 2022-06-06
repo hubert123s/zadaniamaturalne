@@ -2,7 +2,7 @@ public class Punktacja {
 
 
 
-        private int punkt;
+        private int punkt ;
         private int iloscpytan;
 
         public Punktacja(int punkt, int iloscpytan) {

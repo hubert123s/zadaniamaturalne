@@ -12,12 +12,31 @@ C.4
 D.9
 ODP
 A
-
-
-jajajaa
-d
-d3
-d34
-d345
+ile to 2+2?
+A.4
+B.5
+C.6
+D.7
+ODP
+A
+ile to jest pierwiastek z 144?
+A.11
+B.12
+C.13
+D.14
+ODP
+B
+ile to jest 4-2?
+A.2
+B.1
+C.3
+D.4
+ODP
+A
+ile to 2+4?
+A.3
+B.4
+C.5
+D.6
 ODP
 D

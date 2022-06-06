@@ -1,15 +1,17 @@
 import java.io.*;
+import java.util.List;
 import java.util.Scanner;
 
 public class BazaPytan {
 
 
 
- public static void zczytywaniezPliku(String fileName, boolean trudnePytanie) throws IOException {
+ public static void zczytywaniezPliku(String fileName, List<String> pytania) throws IOException {
      Scanner scanner = new Scanner(System.in);
      File filescan = new File(fileName);
      Scanner scan = new Scanner(filescan);
      Punktacja punkty= new Punktacja(0,0);
+     BledneOdpowiedzi bledneOdpowiedzi= new BledneOdpowiedzi();
     String [] caleZadanie =  new String[7];
     int nrLiniiZadania =0;
      System.out.println("Teraz wyświetlimy to co jest w pliku " + fileName);
@@ -28,10 +30,12 @@ public class BazaPytan {
                  System.out.println("Poprawna odpowiedz");
                  punkty.setPunkt(1);
              }
-             else if (trudnePytanie)
+             else
              {
-                 NowePytanie nowePytanie = new NowePytanie();
-                 nowePytanie.dodajDoPliku("trudnezadania.txt",caleZadanie);
+                 for (String i : caleZadanie) {
+                     bledneOdpowiedzi.dodajDoListy(i,pytania);
+                 }
+
              }
              punkty.setIloscpytan(1);
              nrLiniiZadania=0;
@@ -51,10 +55,7 @@ public class BazaPytan {
      }
      System.out.println("Ilosc zdobytych punktów: "+ punkty.getPunkt()+"/"+punkty.getIloscpytan());
 
-     System.out.println("calezadanie");
-     for (int j = 0; j < caleZadanie.length; j++) {
-         System.out.println(caleZadanie[nrLiniiZadania]);
-     }
+
    }
 
 }

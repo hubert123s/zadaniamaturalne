@@ -1,30 +1,32 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
-//dodawanie pytan jako admin
-//klasa z niepoprawnymi odpowiedzi, aby pozniej sprobowac jeszcze raz
+
 
 public class Menu {
 
     private final static String fileName = "zadaniamaturalne.txt";
 
+
     public static void main(String[] args) throws IOException {
 
         BazaPytan pytanie= new BazaPytan() ;
         NowePytanie nowePytanie = new NowePytanie();
-       // System.out.println("Dodaj pytanie :"+nowePytanie.trescCalegoZadania());
+        BledneOdpowiedzi bledneOdpowiedzi = new BledneOdpowiedzi();
+        List<String> pytania = new ArrayList<>();
+
+
+
         nowePytanie.dodajDoPliku(fileName,nowePytanie.trescCalegoZadania());
 
 
 
-       // nowePytanie.dodajPytanie(fileName);
-        //String [] name = nowePytanie.trescCalegoZadania();
-        pytanie.zczytywaniezPliku(fileName,false);
-        //czytanie pytan na ktore była zła odpowiedz
-        pytanie.zczytywaniezPliku(fileName,true);
+        pytanie.zczytywaniezPliku(fileName,pytania);
+        bledneOdpowiedzi.pokazPytanie(pytania);
+
+
+
 
 
 

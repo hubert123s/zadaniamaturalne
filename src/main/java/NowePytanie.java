@@ -9,28 +9,27 @@ public class NowePytanie {
     {
         Scanner scanner = new Scanner(System.in);
         String[] tresc= new String[7];
-        StringBuilder stringBuilder = new StringBuilder();
         String tymczasowy;
-        int i =0;
+        int nrLiniizadania =0;
          System.out.println("Wpisz treść zadania");
-        tresc[i]= scanner.nextLine();
-
+        tresc[nrLiniizadania]= scanner.nextLine();
 
         String[] tablicaOdpowiedzi ={"A.","B.","C.","D." };
-        for ( i = 1; i < 5 ; i++) {
-             System.out.println("Wpisz odpowiedz "+tablicaOdpowiedzi[i-1]);
+        for ( nrLiniizadania = 1; nrLiniizadania < 5 ; nrLiniizadania++) {
+             System.out.println("Wpisz odpowiedz "+tablicaOdpowiedzi[nrLiniizadania-1]);
             tymczasowy=scanner.nextLine();
-            stringBuilder.append(tymczasowy);
-            tresc[i]= stringBuilder.toString();
+            //stringBuilder.append(tablicaOdpowiedzi[nrLiniizadania-1]).append(tymczasowy);
+            tresc[nrLiniizadania] = tablicaOdpowiedzi[nrLiniizadania-1]+tymczasowy;
+            //tresc[nrLiniizadania]= stringBuilder.toString();
+           // stringBuilder=null;
 
         }
         System.out.println("Wpisz,która odpowiedz jest poprawna");
-        tresc[i]= scanner.nextLine();
-        //tablicaodpowiedz[i].append ( )
+        tresc[nrLiniizadania]= scanner.nextLine();
         return tresc;
 
     }
-    public static void dodajDoPliku(String fileName, String tresc[]) throws FileNotFoundException {
+    public static void dodajDoPliku(String fileName, String[] tresc) throws FileNotFoundException {
        // Scanner scanner = new Scanner(System.in);
         File filescan = new File(fileName);
         Scanner scan = new Scanner(filescan);
@@ -51,10 +50,10 @@ public class NowePytanie {
 
 
             }
-            bw.write("ODP");
+            bw.write("ODP");// lub tresc[i]
             bw.newLine();
            // System.out.println("Wpisz,która odpowiedz jest poprawna");
-           // tresc[i]= scanner.nextLine();
+           //tresc[i]= scanner.nextLine();
             bw.write(tresc[i].toUpperCase(Locale.ROOT));
 
 
