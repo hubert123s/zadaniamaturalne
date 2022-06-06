@@ -9,9 +9,15 @@ public class BledneOdpowiedzi {
     public void pokazPytanie(List<String> pytania)
     {
 
-        System.out.println("Za chwile zostana podane odpowiedzi do zadan,w których zostały udzielone niepoprawne odpowiedzi:");
-        System.out.println(pytania);
+        if(pytania.isEmpty())
+        {
+            System.out.println("Brak blednych odpowiedzi");
+        }
+        else{
+            System.out.println("Za chwile zostana podane odpowiedzi do zadan,w których zostały udzielone niepoprawne odpowiedzi:");
+            System.out.println(pytania);
 
+        }
 
     }
 
