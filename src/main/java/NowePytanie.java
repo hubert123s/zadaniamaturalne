@@ -18,11 +18,7 @@ public class NowePytanie {
         for ( nrLiniizadania = 1; nrLiniizadania < 5 ; nrLiniizadania++) {
              System.out.println("Wpisz odpowiedz "+tablicaOdpowiedzi[nrLiniizadania-1]);
             tymczasowy=scanner.nextLine();
-            //stringBuilder.append(tablicaOdpowiedzi[nrLiniizadania-1]).append(tymczasowy);
             tresc[nrLiniizadania] = tablicaOdpowiedzi[nrLiniizadania-1]+tymczasowy;
-            //tresc[nrLiniizadania]= stringBuilder.toString();
-           // stringBuilder=null;
-
         }
         System.out.println("Wpisz,która odpowiedz jest poprawna");
         tresc[nrLiniizadania]= scanner.nextLine();
@@ -30,39 +26,22 @@ public class NowePytanie {
 
     }
     public static void dodajDoPliku(String fileName, String[] tresc) throws FileNotFoundException {
-       // Scanner scanner = new Scanner(System.in);
         File filescan = new File(fileName);
-        Scanner scan = new Scanner(filescan);
         int i =0;
         try (FileWriter fw = new FileWriter(fileName, true);
              BufferedWriter bw = new BufferedWriter(fw)) {
-           // System.out.println("Wpisz treść zadania");
             bw.newLine();
-           // String tresc= scanner.nextLine();
             bw.write(tresc[i]);
             bw.newLine();
-            //String tablicaOdpowiedzi []={"A.","B.","C.","D." };
             for ( i = 1; i < 5; i++) {
-               // System.out.println("Wpisz odpowiedz "+tablicaOdpowiedzi[i]);
-                //tresc[i]= scanner.nextLine();
                 bw.write(tresc[i]);
                 bw.newLine();
-
-
             }
-            bw.write("ODP");// lub tresc[i]
+            bw.write("ODP");
             bw.newLine();
-           // System.out.println("Wpisz,która odpowiedz jest poprawna");
-           //tresc[i]= scanner.nextLine();
             bw.write(tresc[i].toUpperCase(Locale.ROOT));
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
-
 }

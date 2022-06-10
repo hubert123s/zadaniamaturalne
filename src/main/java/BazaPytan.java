@@ -58,4 +58,9 @@ public class BazaPytan {
 
    }
 
+   public static boolean czyZaliczone(int iloscPytan, int iloscPunktow)
+   {
+       return iloscPunktow>=0.5? true:false;
+   }
+
 }
