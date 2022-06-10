@@ -17,6 +17,7 @@ public class Menu {
         BledneOdpowiedzi bledneOdpowiedzi = new BledneOdpowiedzi();
         List<String> pytania = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
+        Punktacja punktacja = new Punktacja(0,0);
 
         String wybor;
         do {
@@ -24,6 +25,7 @@ public class Menu {
             System.out.println("1.Dodanie nowego zadania ");
             System.out.println("2.Odczytywanie wszystkich zadan z pliku" + fileName);
             System.out.println("3. Pokazanie błednych odpowiedzi");
+            System.out.println("4. Sprawdzanie,czy zaliczone");
             System.out.println("exit - wyjscie z programu  ");
 
             wybor = scanner.nextLine();
@@ -33,10 +35,13 @@ public class Menu {
                     nowePytanie.dodajDoPliku(fileName, nowePytanie.trescCalegoZadania());
                     break;
                 case "2":
-                    pytanie.zczytywaniezPliku(fileName, pytania);
+                    pytanie.zczytywaniezPliku(fileName, pytania, punktacja);
                     break;
                 case "3":
-                    bledneOdpowiedzi.pokazPytanie(pytania);
+                    bledneOdpowiedzi.pokazPytanie(pytania,punktacja);
+                    break;
+                case "4":
+                    BazaPytan.sprawdzamWynik(punktacja);
                     break;
                 default:
                     System.out.println("Nieprawidłowy format");
@@ -44,7 +49,7 @@ public class Menu {
 
 
             }
-        } while (wybor.equals("EXIT"));
+        } while (!wybor.equals("EXIT"));
 
 
     }

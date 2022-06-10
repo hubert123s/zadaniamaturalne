@@ -6,11 +6,10 @@ public class BazaPytan {
 
 
 
- public static void zczytywaniezPliku(String fileName, List<String> pytania) throws IOException {
+ public static void zczytywaniezPliku(String fileName, List<String> pytania, Punktacja punkty) throws IOException {
      Scanner scanner = new Scanner(System.in);
      File filescan = new File(fileName);
      Scanner scan = new Scanner(filescan);
-     Punktacja punkty= new Punktacja(0,0);
      BledneOdpowiedzi bledneOdpowiedzi= new BledneOdpowiedzi();
     String [] caleZadanie =  new String[7];
     int nrLiniiZadania =0;
@@ -57,10 +56,40 @@ public class BazaPytan {
 
 
    }
+   public static void sprawdzamWynik(Punktacja punktacja)
+   {
+       if(czyBylyOdpowiedzi(punktacja.getIloscpytan()))
+       {
+           System.out.println("Ilosc zdobytych punktów: "+ punktacja.getPunkt()+"/"+punktacja.getIloscpytan());
+           if(czyZaliczone(punktacja.getIloscpytan(), punktacja.getPunkt()))
+           {
+               System.out.println("Zaliczone");
+           }
+           else System.out.println("Niezaliczone");
 
+       }
+       else
+       {
+           System.out.println("Nie odpowiadałeś/łaś jeszcze na pytania");
+       }
+
+   }
+   public static  boolean czyBylyOdpowiedzi(int iloscPytan)
+   {
+       return iloscPytan>0? true:false;
+   }
    public static boolean czyZaliczone(int iloscPytan, int iloscPunktow)
    {
-       return iloscPunktow>=0.5? true:false;
+       double convertIloscPytan = Double.valueOf(iloscPytan);
+       double convertIloscPunktow = Double.valueOf(iloscPunktow);
+       try {
+           return iloscPunktow / iloscPunktow >= 0.5 ? true : false;
+
+       }
+       catch (ArithmeticException exception) {
+               System.out.println("Zdobyto 0 punktów");
+               return false;
+       }
    }
 
 }
