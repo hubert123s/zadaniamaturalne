@@ -82,8 +82,9 @@ public class BazaPytan {
    {
        double convertIloscPytan = Double.valueOf(iloscPytan);
        double convertIloscPunktow = Double.valueOf(iloscPunktow);
+
        try {
-           return iloscPunktow / iloscPunktow >= 0.5 ? true : false;
+           return convertIloscPunktow / convertIloscPytan >= 0.5 ? true : false;
 
        }
        catch (ArithmeticException exception) {
