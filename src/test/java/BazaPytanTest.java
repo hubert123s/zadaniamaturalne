@@ -1,10 +1,24 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BazaPytanTest {
+@ParameterizedTest
+@ValueSource( ints = {-2,0})
+public void pytania (int iloscPytan)
+{
+    //given
+    BazaPytan bazaPytan= new BazaPytan();
+    //when
+    boolean wynik = bazaPytan.czyBylyOdpowiedzi(iloscPytan);
+    //then
+    Assertions.assertFalse(wynik);
+}
+
 @Test
 public void zeroPunktow()
 {
@@ -17,18 +31,7 @@ public void zeroPunktow()
     //then
     Assertions.assertEquals(false, wynik);
 }
-    @Test
-    public void dwaPunkty()
-    {
-        //given
-        BazaPytan bazaPytan= new BazaPytan();
-        int iloscPytan = 3;
-        int iloscPunktow = 2;
-        //when
-        boolean wynik = bazaPytan.czyZaliczone(iloscPytan,iloscPunktow);
-        //then
-        Assertions.assertEquals(true, wynik);
-    }
+
     @Test
     public void ujemnePunkty()
     {
@@ -42,28 +45,17 @@ public void zeroPunktow()
         Assertions.assertEquals(false, wynik);
     }
     @Test
-    public void iloscPytan()
+    public void dwaPunkty()
     {
         //given
         BazaPytan bazaPytan= new BazaPytan();
         int iloscPytan = 3;
+        int iloscPunktow = 2;
         //when
-        boolean wynik = bazaPytan.czyBylyOdpowiedzi(iloscPytan);
+        boolean wynik = bazaPytan.czyZaliczone(iloscPytan,iloscPunktow);
         //then
-
         Assertions.assertEquals(true, wynik);
     }
-    @Test
-    public void zeroPytan()
-    {
-        //given
-        BazaPytan bazaPytan= new BazaPytan();
-        int iloscPytan = 0;
-        //when
-        boolean wynik = bazaPytan.czyBylyOdpowiedzi(iloscPytan);
-        //then
 
-        Assertions.assertEquals(false, wynik);
-    }
 
 }
