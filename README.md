@@ -5,7 +5,7 @@
 
 • scoring points for correct answers
 ## Tech/framework used 
-• Java 11
+• Java 17
 
 • JUnit
 
