@@ -1,9 +1,9 @@
 ## Capabilities of the console application:
-• adding new questions and saving to file .txt
+• adding new questions and saving as a .txt file
 
-• reading questions from a file
+• receiving given questions from a separate file
 
-• scoring points for correct answers
+• counting points for correctly given answers
 ## Tech/framework used 
 • Java 17
 
